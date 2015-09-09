@@ -1,0 +1,92 @@
+[
+    {
+        "IPAddr0": "202.80.222.50",
+        "IPAddr1": "202.147.207.5",
+        "IPAddr2": "202.147.196.118",
+        "IPAddr3": "202.80.222.51",
+        "IPAddr4": "202.147.207.4",
+        "IPAddr5": "202.147.192.113",
+        "Port0": 8080,
+        "Port1": 8086,
+        "Action1": "Login",
+        "Action2": "Logout",
+        "Register":
+	[
+            {
+		"RegisterURL": "http://202.147.192.113/moviebay/backend/api/customer/register",
+		"firstname":"firstname",
+                "lastname":"lastname",
+                "regemail":"email",
+		"handphone":"handphone",
+		"regpass":"password",
+		"gender":"gender",
+		"homephone":"homephone",
+		"id_city":"id_city",
+		"zipcode":"zipcode"
+            }
+         ],
+	 "Login":
+	 [
+            {
+		"LoginURL":"http://202.147.192.113/moviebay/backend/api/customer/login",
+		"username":"email",
+		"loginpass":"password"
+            }
+         ],		
+	 "GetListVOD":
+	 [
+            {
+		"URLListVOD":"http://202.147.200.66/~henry/ott/list.txt",
+		"PicListVOD":"http://202.80.222.51:8080/",
+		"PicVOD":"http://i.moviebay.com/content_images/"
+            }
+         ],
+	 "GetListEPG":
+	 [
+            {
+		"URLListEPG":"http://202.147.200.66/~henry/ott/vodlist.php?",
+		"channelcode":"channelcode=",
+		"columncode":"columncode="
+            }
+         ],
+	 "GetMovieEPG":
+	 [
+            {
+		"URLMovieEPG":"http://202.147.200.66/~henry/ott/vodplay.php?",
+		"channelcode":"channelcode=",
+		"pcode":"pcode="
+            }
+         ],
+	 "GetURLLiveTV":
+	 [
+            {
+		"URLLiveTV":"http://202.147.200.66/~henry/ott/live.php?",
+		"channelcode":"channelcode=",
+		"columncode":"columncode="
+            }
+         ],
+	 "GetLiveTVEPG":
+	 [
+            {
+		"URLLiveTVEPG":"http://202.147.200.66/~henry/ott/epg.php?",
+		"channelcode":"channelcode=",
+		"columncode":"columncode="
+            }
+         ],
+	 "SlugPager":
+	 [
+	    {
+		"SlugURL":"http://backend.moviebay.com/api/product/getProductBySlug",
+		"Variabel":"slug"
+	    }
+	 ],
+	 "GetEPGHour":
+	 [
+	    {
+		"EPGHour":"http://202.147.200.66/~henry/ott/epghour.php?",
+		"channelcode":"channelcode=",
+		"columncode":"columncode="
+	    }
+	 ]
+    }
+]

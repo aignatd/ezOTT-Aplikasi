@@ -1,0 +1,386 @@
+﻿Version=5.02
+NumberOfModules=13
+Module1=Fungsi
+Module2=Utama
+Module3=EPGList
+Module4=Register
+Module5=Pilihan
+Module6=EPGDownloader
+Module7=ImageDownloader
+Module8=Content
+Module9=Webview
+Module10=KeyValueStore
+Module11=AnotherDatePicker
+Module12=MNCUtils2Service
+Module13=MNCHttpJob
+Build1=Default,ottplaymedia.mncplaymedia.com
+Build2=New_1,ottplaymedia.mncplaymedia.com
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~~\n~AddManifestText(<uses-permission android:name="android.permission.INTERNET" />)~\n~AddManifestText(<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />)~\n~AddManifestText(<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />)~\n~AddManifestText(<uses-permission android:name="android.permission.READ_PHONE_STATE" />)~\n~AddManifestText(<uses-permission android:name="android.permission.WAKE_LOCK" />)~\n~AddManifestText(<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />)~\n~AddManifestText(<uses-permission android:name="android.permission.RESTART_PACKAGES" />)~\n~AddManifestText(<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />)~\n~AddManifestText(<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />)~\n~~\n~'End of default text.~\n~
+IconFile=
+NumberOfFiles=73
+File1=back_button.png
+File2=back_icon.png
+File3=bg_ott.png
+File4=box_input.png
+File5=btn_about.png
+File6=btn_exit.png
+File7=btn_login.png
+File8=btn_logout.png
+File9=btn_manual.png
+File10=cancel_btn.png
+File11=close_ic.png
+File12=comment_icon.png
+File13=config.json
+File14=content.bal
+File15=Cross_ico_48dpi.png
+File16=datepicker.bal
+File17=dropdown_input.png
+File18=duration_icon.png
+File19=email_input.png
+File20=EPGDetail.bal
+File21=EPGList.bal
+File22=fullname_input.png
+File23=genre_icon.png
+File24=gotham-bold.ttf
+File25=gotham-light.ttf
+File26=gotham-medium.ttf
+File27=homepass_type.png
+File28=info.png
+File29=LiveTVDetail.bal
+File30=LiveTVDetSmart.bal
+File31=login with facebook.png
+File32=login.bal
+File33=login.bal.bak
+File34=loginlogo.png
+File35=logo_login.png
+File36=mac_address_input.png
+File37=main_bg.png
+File38=main_menu_btn.png
+File39=metube_webview.bal
+File40=middlebar_input.png
+File41=newreg.bal
+File42=nexplayersdklitevm.apk
+File43=or.png
+File44=pic_input_pass.png
+File45=pic_input_user.png
+File46=Pilihan.bal
+File47=play_icon.png
+File48=playbox_reg_big.png
+File49=playepg.png
+File50=pleasewait.jpg
+File51=province_input.png
+File52=question.png
+File53=raid_articlelarge.jpg
+File54=rate_icon.png
+File55=red-line.png
+File56=register.png
+File57=registration.png
+File58=retypepass_input.png
+File59=serialnum_input.png
+File60=share_icon.png
+File61=smartphone.bal
+File62=smartphone.html
+File63=spin.gif
+File64=splashlandscape.jpg
+File65=splashpotrait.jpg
+File66=submit_btn.png
+File67=tablet.bal
+File68=the-raid.jpg
+File69=top_bar_only.png
+File70=trailer_icon.png
+File71=user_call.png
+File72=warning.png
+File73=wilayah#.jpg
+NumberOfLibraries=21
+Library1=core
+Library2=sql
+Library3=phone
+Library4=reflection
+Library5=randomaccessfile
+Library6=json
+Library7=stringutils
+Library8=javaobject
+Library9=http
+Library10=httputils2
+Library11=dateutils
+Library12=betterdialogs
+Library13=splashfade
+Library14=xtraviews
+Library15=byteconverter
+Library16=stringfunctions
+Library17=richstring
+Library18=webviewxtended
+Library19=b4agridview
+Library20=abwifi
+Library21=encryption
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: OTT Playmedia v1.6
+	#VersionCode: 1
+	#VersionName: 1.6
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	'Layar Support :Potrait
+	#SupportedOrientations: portrait
+	'Bisa Install External Storage
+	#CanInstallToExternalStorage: True
+#End Region
+
+#Region  Activity Attributes 
+	'No FullScreen
+	#FullScreen: False
+	'Exclude Title
+	#IncludeTitle: False
+#End Region
+
+#Region Image Sesuai Resolusi
+#AdditionalRes: ../drawable 
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+	'DelareSplashscreen
+	Private sfMain			As SplashFade
+	'Image View Untuk Login dan Regist 
+	Private ivLogin 		As ImageView
+	Private iv1 			As ImageView
+	Private etEmail 		As EditText
+	Private iv2 			As ImageView
+	Private etPass 			As EditText
+	Private bSubmit 		As Button
+	Private iv3 			As ImageView
+	Private iv4 			As ImageView
+	Private ivBg			As ImageView
+	Private ivUser 			As ImageView
+	Private lblUser 		As Label
+	Private lblNamaFilm 	As Label
+	Private user 			As Map
+	Private GifMain			As MovieViewControl
+	Private RCTI 			As Button
+	'MessageBox
+	Private BDLogin			As BetterDialogs	
+
+	#Region Variable instal player
+	Private ups 			As Intent
+	Private ipack			As Int
+	Private pm 				As PackageManager
+	#End Region
+	
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	'Activity.LoadLayout("Layout1")
+
+	'Background Color Red ARGB
+	Activity.Color = Colors.ARGB(255, 50, 50, 50)
+	
+	#Region Set Default Folder
+	If FirstTime Then
+		Fungsi.SetDirProg("")
+		Fungsi.BacaFileConfig
+		Fungsi.mpList.Put("DirDBS", Fungsi.DirDBS)
+	End If
+	#End Region
+	
+	#Region Deteksi screen layar gadget
+	If GetDeviceLayoutValues.ApproximateScreenSize < 5 Then
+ 		'phones
+		If Activity.Width > Activity.Height Then
+			sfMain.Initialize(Activity, Me, "splashlandscape.jpg", Gravity.CENTER, 2000, 100, "Down", True)
+		Else
+			sfMain.Initialize(Activity, Me, "splashpotrait.jpg", Gravity.CENTER, 2000, 100, "Down", True)
+		End If
+	Else
+  	'tablets
+		If Activity.Width > Activity.Height Then
+			sfMain.Initialize(Activity, Me, "splashlandscape.jpg", Gravity.CENTER, 2000, 100, "Down", True)
+		Else
+			sfMain.Initialize(Activity, Me, "splashpotrait.jpg", Gravity.CENTER, 2000, 100, "Down", True)
+		End If
+	End If
+	#End Region
+End Sub
+
+Sub Activity_Resume
+	'Dir DBS
+	Fungsi.DirDBS = Fungsi.mpList.Get("DirDBS")
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+End Sub
+
+'Selesai Splash Screen
+Sub Splash_Complete
+	#Region Cek File Config.json
+	If File.Exists(File.DirAssets, "config.json") Then
+		If Fungsi.CacahJSON(File.ReadString(File.DirAssets, "config.json"), "NextArray") = False Then
+			BDLogin.Msgbox(Fungsi.TitleBox, Fungsi.InitFail, Fungsi.btnOK, "", "", Fungsi.GetDrawable(Fungsi.icWarning))
+			ExitApplication
+		End If
+	Else
+		BDLogin.Msgbox(Fungsi.TitleBox, Fungsi.LoadFail, Fungsi.btnOK, "", "", Fungsi.GetDrawable(Fungsi.icWarning))
+		ExitApplication
+	End If
+	#End Region
+	
+	#Region Awal aplikasi mulai
+	If (File.Exists(Fungsi.DirDBS, "nexplayersdklitevm.apk") = False) And (File.Exists(File.DirAssets, "nexplayersdklitevm.apk") = True) Then
+		ProgressDialogShow2("Please wait...", False)
+		DoEvents
+		File.Copy(File.DirAssets, "nexplayersdklitevm.apk", Fungsi.DirDBS, "nexplayersdklitevm.apk")
+		ProgressDialogHide
+		DoEvents
+	End If
+
+	Dim pacList As List = pm.GetInstalledPackages
+	ipack = pacList.IndexOf("com.nexstreaming.app.nexplayersample")
+
+	If ipack < 0 Then
+		ups.Initialize(ups.ACTION_VIEW, "file://" & File.Combine(Fungsi.DirDBS, "nexplayersdklitevm.apk"))
+		ups.SetType("application/vnd.android.package-archive")
+		StartActivity(ups)
+	End If
+	#End Region
+
+	#Region Tampilkan Layout Dari Designer
+	Activity.LoadLayout("login")
+	#End Region
+
+	#Region Set Background
+	Dim cdBack 	As ColorDrawable	
+	cdBack.Initialize(Colors.RGB(132, 31, 40), 5)	
+	iv1.Background = Fungsi.GetDrawable("mail_icon")
+	iv2.Background = cdBack
+	iv3.Background = Fungsi.GetDrawable("password_icon")
+	iv4.Background = cdBack
+	etEmail.Background = cdBack
+	etPass.Background = cdBack
+	#End Region
+End Sub
+
+Sub bSubmit_Click
+	Dim HomeJob As MNCHttpJob
+	Dim	strEnc	As String
+	Dim Gen			As JSONGenerator
+	Dim mlogin	As Map
+	
+	GifMain.Visible = True
+	DoEvents
+	DoEvents
+	
+	StopService(MNCUtils2Service)
+	CancelScheduledService(MNCUtils2Service)
+	StopService(ImageDownloader)
+	CancelScheduledService(ImageDownloader)
+	StopService(EPGDownloader)
+	CancelScheduledService(EPGDownloader)
+		
+	mlogin.Initialize
+	mlogin.Clear
+	
+	mlogin.Put(Fungsi.mpList.Get("username"), etEmail.text)
+	mlogin.Put(Fungsi.mpList.Get("loginpass"), etPass.Text)
+	Gen.Initialize(mlogin)
+	HomeJob.Initialize("Login", Me)
+
+	Try
+		HomeJob.Tag = "Login"
+		strEnc = Fungsi.ProsesEnkripsi(Gen.ToPrettyString(4))
+		If strEnc = "Enkripsi Failed" Then Return
+		HomeJob.PostString(Fungsi.mpList.Get ("LoginURL"), "teks=" & strEnc)
+		HomeJob.GetRequest.SetHeader("Cache-Control", "no-cache, must-revalidate")
+		HomeJob.GetRequest.Timeout = DateTime.TicksPerSecond * 60
+	Catch
+		BDLogin.Msgbox(Fungsi.TitleBox, Fungsi.LoadFail, Fungsi.btnOK, "", "", Fungsi.GetDrawable(Fungsi.icWarning))
+	End Try
+End Sub
+
+Sub bReg_Click
+	StartActivity(Register)
+End Sub
+
+Sub JobDone (MNChttp As MNCHttpJob)
+	Dim sf			As StringFunctions
+	Dim sTmp 		As String
+	Dim parser 		As JSONParser	
+	Dim mresult		As Map
+	Dim bTmp()		As Byte
+	Dim bcTmp		As ByteConverter
+	Dim su 			As StringUtils
+
+	#Region HTTP Gagal
+	If MNChttp.Success = False Then
+		GifMain.Visible = False
+
+		If (sf.InString(MNChttp.ErrorMessage, "timed out") > 0) Or (sf.InString(MNChttp.ErrorMessage, "refused") > 0) Or _
+			 (sf.InString(MNChttp.ErrorMessage, "Unable to resolve host") > 0) Or (sf.InString(MNChttp.ErrorMessage, "UnknownHostException") > 0) Or _
+			 (sf.InString(MNChttp.ErrorMessage, "FileNotFound") > 0) Then
+			BDLogin.Msgbox(Fungsi.TitleBox, Fungsi.NoKoneksi, Fungsi.btnOK, "", "", Fungsi.GetDrawable(Fungsi.icWarning))
+		Else
+			If sf.InString(MNChttp.ErrorMessage, "Not Found") < 0 Then
+				BDLogin.Msgbox(Fungsi.TitleBox, Fungsi.Unknown, Fungsi.btnOK, "", "", Fungsi.GetDrawable(Fungsi.icWarning))
+			End If
+		End If
+
+		Fungsi.mpList.Put("Koneksi", "Offline")
+		MNChttp.Release
+	#End Region
+	#Region HTTP Sukses
+	Else
+		Try
+			bTmp = su.DecodeBase64(MNChttp.GetString)
+			sTmp = bcTmp.StringFromBytes(bTmp, "UTF8")
+			parser.Initialize(Fungsi.UnWrap(sTmp))
+			MNChttp.Release
+		Catch
+			GifMain.Visible = False
+			BDLogin.Msgbox(Fungsi.TitleBox, Fungsi.ProsesFail, Fungsi.btnOK, "", "", Fungsi.GetDrawable(Fungsi.icWarning))
+			Return
+		End Try
+		
+		Try
+			mresult.Initialize
+			mresult = parser.NextObject
+		Catch
+			GifMain.Visible = False
+			BDLogin.Msgbox(Fungsi.TitleBox, Fungsi.ProsesFail, Fungsi.btnOK, "", "", Fungsi.GetDrawable(Fungsi.icWarning))
+			Return
+		End Try
+
+		If mresult.Get("Result") <> "0" Then
+			GifMain.Visible = False
+			BDLogin.Msgbox(Fungsi.TitleBox, mresult.Get("Message"), Fungsi.btnOK, "", "", Fungsi.GetDrawable(Fungsi.icWarning))
+		Else
+			Fungsi.mpList.Put("Koneksi", "Online")
+			MNChttp.Release
+
+			Select MNChttp.JobName			
+			#Region Login
+			Case "Login"				
+				GifMain.Visible = False
+				
+				StopService(MNCUtils2Service)
+				CancelScheduledService(MNCUtils2Service)
+				StopService(ImageDownloader)
+				CancelScheduledService(ImageDownloader)
+				StopService(EPGDownloader)
+				CancelScheduledService(EPGDownloader)
+				
+				Fungsi.DataConfig.Username = etEmail.Text
+				Fungsi.DataConfig.Password = etPass.Text
+				Fungsi.TulisFileConfig(Fungsi.DataConfig)
+				StartActivity(Pilihan)
+				Activity.Finish
+			#End Region			
+			End Select
+		End If
+	End If
+End Sub
